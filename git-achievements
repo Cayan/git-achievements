@@ -84,6 +84,7 @@ function unlock_achievement()
     output_achievement "$@" >> "${ACHIEVEMENTSLOGFILE}"
 
     if [ "`git config --global achievement.upload`" = "true" ] ; then
+        git pull origin gh-pages
         publish_achievements "$@"
     fi
 }
